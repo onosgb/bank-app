@@ -1,0 +1,22 @@
+.trans-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 85vh;
+  margin-top: 20px;
+  padding: 20px 50px;
+  background-color: #fff;
+}
+.trans-fa {
+  cursor: pointer;
+}
+
+.print-trans {
+  opacity: 0.2;
+  background-color: transparent;
+}

@@ -1,0 +1,75 @@
+.dashboard-container {
+  width: 100vw;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.dashboard-card {
+  width: 50vw;
+  height: 70vh;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: none;
+  position: relative;
+}
+
+.dashboard-card-header {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  background-color: #343a40;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 50px;
+  margin-bottom: 10px;
+}
+
+.dashboard-card-content {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-around;
+  height: 400px;
+  width: 80%;
+}
+
+.dashboard-card-item {
+  background-color: #3b5bdb;
+  width: 35%;
+  height: 35%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.5s ease;
+}
+
+.dashboard-card-item:hover {
+  background-color: #364fc7;
+  transform: scale(1.1);
+}
+
+.dashboard-advert {
+  margin: 5px 0px;
+  width: 50vw;
+  height: 100%;
+  background: url("https://i0.wp.com/brandspurng.com/wp-content/uploads/2021/05/Childrens-Day-Brandspurng-Fidelity-Bank-Rewards-62-SWEETA-Holders-with-N150000-Each1-1024x1024.jpg?resize=1024%2C1024&ssl=1")
+    no-repeat center;
+  background-size: cover;
+}

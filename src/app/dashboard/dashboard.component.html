@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="dashboard-container">
+  <div class="dashboard-advert"></div>
+  <div class="dashboard-card">
+    <div class="dashboard-card-header">
+      Balance: {{ userAccount.accBalance | currency: "NGN" }}
+    </div>
+    <div class="dashboard-card-content" *ngIf="!isPaying">
+      <div class="dashboard-card-item" (click)="makePayment()">
+        <i class="fa fa-bank"></i> &nbsp; Payment
+      </div>
+      <div class="dashboard-card-item" [routerLink]="'/transactions'">
+        <i class="fa fa-money" i> &nbsp; Transactions </i>
+      </div>
+    </div>
+
+    <div class="dashobard-cart-content" *ngIf="isPaying">
+      <app-payment
+        [userAccount]="userAccount"
+        [recepient]="recepient"
+        (receiveEvent)="receiverPayment($event)"
+        (payEvent)="payNow($event)"
+        (backEvent)="isPaying = false"
+      ></app-payment>
+    </div>
+  </div>
+</div>

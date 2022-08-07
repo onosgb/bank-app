@@ -1,0 +1,82 @@
+<div class="payment" [formGroup]="paymentForm">
+  <span class="payment-title">Payment</span>
+  <div class="payment-form-group">
+    <input
+      type="text"
+      class="form-control"
+      formControlName="amount"
+      placeholder="Amount"
+      [ngClass]="{
+        'input-error': submitted && pf['amount'].invalid
+      }"
+    />
+  </div>
+  <div
+    class="payment-form-group"
+    *ngIf="submitted && checkBalance(pf['amount'].value)"
+  >
+    <p class="text-danger">Insfuficients funds!</p>
+  </div>
+  <div class="payment-form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Account Number"
+      formControlName="recieverAccNo"
+      [ngClass]="{ 'input-error': submitted && pf['recieverAccNo'].invalid }"
+      (keyup)="searchByAccNo()"
+    />
+  </div>
+  <div class="payment-form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Bank"
+      readonly
+      formControlName="receiverBank"
+      [value]="recepient.bank"
+    />
+  </div>
+  <div class="payment-form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Account Name"
+      readonly
+      formControlName="receiver"
+      [value]="recepient.firstName + ' ' + recepient.lastName"
+    />
+  </div>
+
+  <div class="payment-form-group">
+    <input
+      type="password"
+      formControlName="password"
+      class="form-control"
+      placeholder="Password"
+      [ngClass]="{ 'input-error': submitted && pf['password'].invalid }"
+    />
+  </div>
+  <div class="payment-form-group terms">
+    <input
+      type="checkbox"
+      formControlName="agreement"
+      [ngClass]="{
+        'input-error': submitted && pf['agreement'].value == false
+      }"
+    />
+    <span
+      [ngClass]="{
+        'text-danger': submitted && pf['agreement'].value === false
+      }"
+    >
+      I agree with the terms of payments</span
+    >
+  </div>
+  <div class="payment-form-group">
+    <button class="pay" (click)="payNow()">
+      <i class="fa fa-bank"></i> Pay
+    </button>
+    <i class="fa fa-arrow-left pay-back" (click)="back()"></i>
+  </div>
+</div>

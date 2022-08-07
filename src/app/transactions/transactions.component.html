@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<div class="trans-container">
+  <!-- Payment component -->
+  <ng-container *ngIf="isPrinting">
+    <app-print (closePrintEvent)="closePrint()" [payment]="payment"></app-print>
+  </ng-container>
+
+  <!-- Transactions wrapper -->
+  <div class="wrapper" [ngClass]="{ 'print-trans': isPrinting }">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">S/N</th>
+          <th scope="col">SENDER</th>
+          <th scope="col">RECEIVER</th>
+          <th scope="col">TRANSACTION STATUS</th>
+          <th scope="col">TRANSACTION DATE</th>
+          <th scope="col">REFERENCE ID</th>
+
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let payment of payments; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ payment.sender }}</td>
+          <td>{{ payment.receiver }}</td>
+          <td>{{ payment.transactionStatus }}</td>
+          <td>{{ payment.transactionDate | date }}</td>
+          <td>{{ payment.transactionRef }}</td>
+          <td>
+            <i
+              class="fa fa-print text-primary trans-fa"
+              (click)="printTransaction(payment)"
+            ></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

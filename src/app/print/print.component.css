@@ -1,0 +1,118 @@
+.container {
+  width: 70%;
+  padding: 20px;
+  background-color: transparent;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  transform: translate(25%, 5%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper-container {
+  width: 80%;
+  height: 80%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  width: 100%;
+}
+
+.fa {
+  cursor: pointer;
+}
+
+/* Print header start here */
+.print-header {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.print-logo {
+  max-width: 150px;
+}
+
+.transaction-title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.amount-desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.amount-title {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.amount {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.summary {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.detail {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+}
+
+.left-detail {
+}
+
+.left-title {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.right-detail {
+}
+
+.right-title {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.paragraph {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.desc-title {
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.print-buton {
+  background-color: transparent;
+  border: none;
+}
+
+@media print {
+  .print-buton {
+    display: none;
+  }
+}

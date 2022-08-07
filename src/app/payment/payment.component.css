@@ -1,0 +1,56 @@
+.payment {
+  border: 1px solid lightgray;
+  padding: 5px;
+  border-radius: 15px;
+  position: relative;
+  padding-top: 15px;
+}
+
+.payment-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(150%, -50%);
+  background-color: #fff;
+  font-weight: 400;
+  font-size: 24px;
+  border: 1px solid lightgray;
+  border-bottom: none;
+  border-radius: 5px;
+}
+
+.pay {
+  border-radius: 10px;
+  background-color: black;
+  padding: 10px;
+  color: #fff;
+  font-weight: 400;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.5s ease;
+}
+
+.pay:hover {
+  transform: scale(1.05);
+}
+
+.payment-form-control {
+  width: 250px;
+}
+
+.payment-form-group {
+  width: 400px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.pay-back {
+  position: absolute;
+  right: 40px;
+  cursor: pointer;
+  font-size: 20px;
+}

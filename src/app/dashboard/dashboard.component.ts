@@ -9,9 +9,9 @@ import { PaymentService } from '../services/payment.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  userAccount!: User;
+  userAccount: User | any;
   isPaying: boolean = false;
-  recepient!: User;
+  recepient: User | any;
 
   constructor(
     private authService: AuthService,

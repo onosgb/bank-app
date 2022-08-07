@@ -8,8 +8,8 @@ import { User } from '../models/user.model';
   styleUrls: ['./payment.component.css'],
 })
 export class PaymentComponent implements OnInit {
-  @Input() userAccount!: User;
-  @Input() recepient!: User;
+  @Input() userAccount: User | any;
+  @Input() recepient: User | any;
   @Output() payEvent = new EventEmitter();
   @Output() receiveEvent = new EventEmitter();
   @Output() backEvent = new EventEmitter<boolean>();

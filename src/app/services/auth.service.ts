@@ -52,15 +52,17 @@ export class AuthService {
       // if user does not exist create the  new user
       if (!data.exists) {
         const createAt = new Date();
+        const { password, confirmPassword, ...otherProps } = userData;
+        delete userData.password;
+        delete userData.confirmPassword;
         try {
           userRef.set({
             displayName: userData.firstName,
-            email: userData.lastName,
             createAt,
-            ...userData,
+            ...otherProps,
             userId: auth.user?.uid,
           });
-          this.signIn(userData.email, userData.password).finally();
+          this.signIn(userData.email, password).finally();
         } catch ({ e }) {
           console.error('error creating user: ' + e);
         }

@@ -38,9 +38,6 @@ export class RegisterComponent implements OnInit {
         this.registerForm.value.confirmPassword
     ) {
       this.registerForm.value.accNo = `${236}${random}`;
-      delete this.registerForm.value.confirmPassword;
-      delete this.registerForm.value.password;
-
       this.authService
         .createUserWithEmailAndPassword(this.registerForm.value)
         .then((user) => {

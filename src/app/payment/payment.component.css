@@ -23,6 +23,7 @@
   border-radius: 10px;
   background-color: black;
   padding: 10px;
+  height: 30px;
   color: #fff;
   font-weight: 400;
   border: none;
@@ -41,4 +42,14 @@
   right: 40px;
   cursor: pointer;
   font-size: 20px;
+}
+
+.payment-form-group {
+  width: 400px;
+  height: 30px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
 }

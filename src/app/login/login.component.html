@@ -48,7 +48,19 @@
       />
     </div>
     <div class="login-form-group">
-      <button class="submit" (click)="onLogin(loginForm.value)">Log In</button>
+      <button class="submit" (click)="onLogin(loginForm.value)">
+        <span>Log In</span>
+        <div class="lds-roller" *ngIf="loading">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </button>
     </div>
 
     <div class="login-form-group">

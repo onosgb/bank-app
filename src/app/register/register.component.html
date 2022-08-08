@@ -116,6 +116,16 @@
     <div class="register-form-group">
       <button class="submit" [disabled]="loading" (click)="onSubmit()">
         Submit
+        <div class="lds-roller" *ngIf="loading">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </button>
     </div>
 

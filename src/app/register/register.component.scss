@@ -16,10 +16,17 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  @media only screen and (max-width: 425px) {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 
 .register-card-item {
   display: flex;
+  @media only screen and (max-width: 425px) {
+    display: block;
+  }
 }
 
 .register-icon {
@@ -30,6 +37,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 425px) {
+    width: 15%;
+    height: 50px;
+  }
 }
 
 .register-form-group {
@@ -37,6 +48,10 @@
   padding: 5px 10px;
   display: flex;
   justify-content: center;
+  @media only screen and (max-width: 425px) {
+    width: 100vw;
+    height: 60px;
+  }
 }
 
 .register-form-control {
@@ -45,4 +60,8 @@
   justify-content: center;
   width: 500px;
   height: 50px;
+  @media only screen and (max-width: 425px) {
+    width: 80%;
+    height: 50px;
+  }
 }

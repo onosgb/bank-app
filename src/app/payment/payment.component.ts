@@ -40,8 +40,6 @@ export class PaymentComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  pay(payment: any) {}
-
   searchByAccNo() {
     let index = this.paymentForm.value.recieverAccNo;
     index = index ? index : '0';

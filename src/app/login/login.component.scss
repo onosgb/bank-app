@@ -17,6 +17,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  @media only screen and (max-width: 425px) {
+    width: 100vw;
+    height: 100vw;
+  }
 }
 
 .login-form-group {
@@ -24,6 +28,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 425px) {
+    width: 100vw;
+    height: 100vw;
+  }
 }
 
 .login-form-control {
@@ -32,6 +40,10 @@
   justify-content: center;
   width: 500px;
   height: 50px;
+  @media only screen and (max-width: 425px) {
+    width: 80%;
+    height: 50px;
+  }
 }
 
 .login-icon {
@@ -42,4 +54,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 425px) {
+    width: 15%;
+    height: 50px;
+  }
 }

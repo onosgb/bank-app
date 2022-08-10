@@ -5,7 +5,7 @@ import { User } from '../models/user.model';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.css'],
+  styleUrls: ['./payment.component.scss'],
 })
 export class PaymentComponent implements OnInit {
   @Input() userAccount: User | any;

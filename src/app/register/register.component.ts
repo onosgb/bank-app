@@ -21,29 +21,43 @@ export class RegisterComponent implements OnInit {
     bank: new FormControl('Fidelity'),
   });
   loading = false;
+  isSumitted = false;
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
   onSubmit() {
-    this.loading = true;
     this.registerForm.value.accBalance = 10000;
     const min = 10000000;
     const max = 90000000;
     const random = Math.floor(Math.random() * min) + max;
-
+    this.clearError();
     if (
       this.registerForm.valid &&
       this.registerForm.value.password ===
         this.registerForm.value.confirmPassword
     ) {
+      this.loading = true;
       this.registerForm.value.accNo = `${236}${random}`;
       this.authService
         .createUserWithEmailAndPassword(this.registerForm.value)
-        .then((user) => {
-          this.loading = false;
-        });
+        .then(
+          (user) => {
+            this.loading = false;
+          },
+          (err) => {
+            this.loading = false;
+          }
+        );
     }
+  }
+
+  clearError() {
+    this.isSumitted = !this.isSumitted;
+    setTimeout(() => {
+      this.isSumitted = !this.isSumitted;
+    }),
+      3000;
   }
 
   get rf() {

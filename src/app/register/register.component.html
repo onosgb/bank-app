@@ -23,7 +23,9 @@
         <input
           [ngClass]="{
             'input-error ':
-              (rf['firstName'].touched || rf['firstName'].dirty) &&
+              (isSumitted ||
+                rf['firstName'].touched ||
+                rf['firstName'].dirty) &&
               rf['firstName'].invalid
           }"
           type="text"
@@ -42,7 +44,7 @@
           formControlName="lastName"
           [ngClass]="{
             'input-error ':
-              (rf['lastName'].touched || rf['lastName'].dirty) &&
+              (isSumitted || rf['lastName'].touched || rf['lastName'].dirty) &&
               rf['lastName'].invalid
           }"
         />
@@ -58,7 +60,9 @@
           formControlName="email"
           [ngClass]="{
             'input-error ':
-              (rf['email'].touched || rf['email'].dirty) && rf['email'].invalid
+              isSumitted ||
+              ((rf['email'].touched || rf['email'].dirty) &&
+                rf['email'].invalid)
           }"
         />
       </div>
@@ -82,7 +86,7 @@
           formControlName="password"
           [ngClass]="{
             'input-error ':
-              (rf['password'].touched || rf['password'].dirty) &&
+              (isSumitted || rf['password'].touched || rf['password'].dirty) &&
               rf['password'].invalid
           }"
         />
@@ -96,7 +100,9 @@
           formControlName="confirmPassword"
           [ngClass]="{
             'input-error ':
-              (rf['confirmPassword'].touched || rf['confirmPassword'].dirty) &&
+              (isSumitted ||
+                rf['confirmPassword'].touched ||
+                rf['confirmPassword'].dirty) &&
               rf['confirmPassword'].invalid
           }"
         />

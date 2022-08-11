@@ -14,22 +14,28 @@
           <th scope="col">S/N</th>
           <th scope="col">SENDER</th>
           <th scope="col">RECEIVER</th>
-          <th scope="col">TRANSACTION STATUS</th>
-          <th scope="col">TRANSACTION DATE</th>
-          <th scope="col">REFERENCE ID</th>
+          <th scope="col">AMOUNT</th>
+          <th scope="col">STATUS</th>
+          <th scope="col">DATE</th>
+          <th scope="col" class="hide">REFERENCE ID</th>
 
-          <th scope="col"></th>
+          <th scope="col" class="hide"></th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let payment of payments; index as i">
+        <tr
+          *ngFor="let payment of payments; index as i"
+          (click)="printTransaction(payment)"
+        >
           <th scope="row">{{ i + 1 }}</th>
           <td>{{ payment.sender }}</td>
           <td>{{ payment.receiver }}</td>
+          <td>{{ payment.amount }}</td>
+
           <td>{{ payment.transactionStatus }}</td>
           <td>{{ payment.transactionDate | date }}</td>
-          <td>{{ payment.transactionRef }}</td>
-          <td>
+          <td class="hide">{{ payment.transactionRef }}</td>
+          <td class="hide">
             <i
               class="fa fa-print text-primary trans-fa"
               (click)="printTransaction(payment)"

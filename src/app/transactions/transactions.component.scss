@@ -11,6 +11,9 @@
   margin-top: 20px;
   padding: 20px 50px;
   background-color: #fff;
+  @media only screen and (max-width: 600px) {
+    padding: 10px;
+  }
 }
 .trans-fa {
   cursor: pointer;
@@ -19,4 +22,16 @@
 .print-trans {
   opacity: 0.2;
   background-color: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+  th {
+    font-size: 10px;
+  }
+  td {
+    font-size: 10px;
+  }
+  .hide {
+    display: none;
+  }
 }

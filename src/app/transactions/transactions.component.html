@@ -7,8 +7,11 @@
   </ng-container>
 
   <!-- Transactions wrapper -->
-  <div class="wrapper" [ngClass]="{ 'print-trans': isPrinting }">
-    <table class="table">
+  <div
+    class="wrapper"
+    [ngClass]="{ 'print-trans': isPrinting, spinner: loading }"
+  >
+    <table class="table" *ngIf="!loading">
       <thead class="thead-dark">
         <tr>
           <th scope="col">S/N</th>
@@ -44,5 +47,17 @@
         </tr>
       </tbody>
     </table>
+    <div class="roller" *ngIf="loading">
+      <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   </div>
 </div>

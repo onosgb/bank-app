@@ -5,6 +5,9 @@
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+  }
 }
 
 .dashboard-card {
@@ -20,7 +23,8 @@
   border: none;
   position: relative;
   @media only screen and (max-width: 600px) {
-    width: 100%;
+    justify-content: center;
+    width: 90vw;
   }
 }
 

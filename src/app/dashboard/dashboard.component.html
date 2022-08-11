@@ -3,8 +3,14 @@
   <div class="dashboard-advert"></div>
   <div class="dashboard-card">
     <div class="dashboard-card-header">
-      <span>Balance: {{ userAccount?.accBalance | currency: "NGN" }} </span>
-      <span>Account: {{ userAccount?.accNo }}</span>
+      <span
+        ><i class="fa fa-money"></i> <span class="hide">Balance:</span>
+        {{ userAccount?.accBalance | currency: "NGN" }}
+      </span>
+      <span
+        ><i class="fa fa-bank"></i> <span class="hide">Account:</span>
+        {{ userAccount?.accNo }}</span
+      >
     </div>
     <div class="dashboard-card-content" *ngIf="!isPaying">
       <div class="dashboard-card-item" (click)="makePayment()">

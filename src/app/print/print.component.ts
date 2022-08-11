@@ -4,7 +4,7 @@ import { Payment } from '../models/payment.model';
 @Component({
   selector: 'app-print',
   templateUrl: './print.component.html',
-  styleUrls: ['./print.component.css'],
+  styleUrls: ['./print.component.scss'],
 })
 export class PrintComponent {
   @Input() payment!: Payment;

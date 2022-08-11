@@ -41,7 +41,9 @@
           <td class="hide-element">
             <i
               class="fa fa-print text-primary trans-fa"
-              (click)="printTransaction(payment)"
+              (click)="
+                printTransaction(payment); $event.stopImmediatePropagation()
+              "
             ></i>
           </td>
         </tr>

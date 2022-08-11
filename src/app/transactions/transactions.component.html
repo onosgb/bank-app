@@ -40,7 +40,8 @@
           <td class="hide-element">{{ payment.transactionRef }}</td>
           <td class="hide-element">
             <i
-              class="fa fa-print text-primary trans-fa"
+              class="fa fa-eye text-primary trans-fa"
+              title="View Receipt details"
               (click)="
                 printTransaction(payment); $event.stopImmediatePropagation()
               "

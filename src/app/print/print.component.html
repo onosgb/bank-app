@@ -14,14 +14,15 @@
           printTitle="Transacton receipt"
           printSectionId="print-section"
           ngxPrint
+          title="Print"
         >
           <i class="fa fa-print text-success"></i>
         </button>
-        <button class="print-buton" (click)="downloadAsPDF()">
+        <button class="print-buton" (click)="downloadAsPDF()" title="Download">
           <i class="fa fa-download text-primary"></i>
         </button>
 
-        <button class="print-buton" (click)="closePrint()">
+        <button class="print-buton" (click)="closePrint()" title="Cancle print">
           <i class="fa fa-close text-danger"></i>
         </button>
         <h1 class="transaction-title">Transaction Details</h1>

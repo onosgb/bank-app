@@ -2,7 +2,7 @@
 <div class="dashboard-container">
   <div class="dashboard-advert"></div>
   <div class="dashboard-card">
-    <div class="dashboard-card-header">
+    <div class="dashboard-card-header" *ngIf="!isLoading">
       <span
         ><i class="fa fa-money"></i> <span class="hide">Balance:</span>
         {{ userAccount?.accBalance | currency: "NGN" }}
@@ -12,7 +12,7 @@
         {{ userAccount?.accNo }}</span
       >
     </div>
-    <div class="dashboard-card-content" *ngIf="!isPaying">
+    <div class="dashboard-card-content" *ngIf="!isPaying && !isLoading">
       <div class="dashboard-card-item" (click)="makePayment()">
         <i class="fa fa-bank"></i> &nbsp; Payment
       </div>
@@ -29,6 +29,21 @@
         (payEvent)="payNow($event)"
         (backEvent)="isPaying = false"
       ></app-payment>
+    </div>
+
+    <div class="dashboard-cart-content" *ngIf="isLoading">
+      <div class="roller">
+        <div class="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

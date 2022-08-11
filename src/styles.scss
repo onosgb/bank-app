@@ -109,6 +109,15 @@ body {
   color: red;
 }
 
+.roller {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #54c249;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .lds-roller {
   display: inline-block;
   position: relative;

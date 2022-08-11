@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   userAccount: User | any;
   isPaying: boolean = false;
   recepient: User | any;
+  isLoading = true;
 
   constructor(
     private authService: AuthService,
@@ -21,10 +22,17 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     const userrdata = this.authService.getUser();
     if (userrdata) {
-      this.authService.getUserAccount(userrdata.uid).subscribe((data) => {
-        if (!data) return;
-        this.userAccount = data;
-      });
+      this.authService.getUserAccount(userrdata.uid).subscribe(
+        (data) => {
+          this.isLoading = false;
+
+          if (!data) return;
+          this.userAccount = data;
+        },
+        (err) => {
+          this.isLoading = false;
+        }
+      );
     }
   }
 

@@ -16,6 +16,7 @@
     padding: 10px;
   }
 }
+
 .trans-fa {
   cursor: pointer;
 }
@@ -25,9 +26,14 @@
   align-items: center;
   justify-content: center;
 }
+
 .print-trans {
   opacity: 0.2;
   background-color: transparent;
+}
+
+tr {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

@@ -33,6 +33,10 @@ export class PrintComponent {
     const pdfDownload = this.pdfDownload.nativeElement;
     var html = htmlToPdfmake(pdfDownload.innerHTML);
     const documentDefinition = { content: html };
-    pdfMake.createPdf(documentDefinition).download();
+    pdfMake
+      .createPdf(documentDefinition)
+      .download(
+        'Transaction-receipt-' + this.payment.transactionRef.toString()
+      );
   }
 }

@@ -20,9 +20,9 @@
           <th scope="col">AMOUNT</th>
           <th scope="col">STATUS</th>
           <th scope="col">DATE</th>
-          <th scope="col" class="hide">REFERENCE ID</th>
+          <th scope="col" class="hide-element">REFERENCE ID</th>
 
-          <th scope="col" class="hide"></th>
+          <th scope="col" class="hide-element"></th>
         </tr>
       </thead>
       <tbody>
@@ -37,8 +37,8 @@
 
           <td>{{ payment.transactionStatus }}</td>
           <td>{{ payment.transactionDate | date }}</td>
-          <td class="hide">{{ payment.transactionRef }}</td>
-          <td class="hide">
+          <td class="hide-element">{{ payment.transactionRef }}</td>
+          <td class="hide-element">
             <i
               class="fa fa-print text-primary trans-fa"
               (click)="printTransaction(payment)"

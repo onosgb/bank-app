@@ -33,7 +33,7 @@
           <th scope="row">{{ i + 1 }}</th>
           <td>{{ payment.sender }}</td>
           <td>{{ payment.receiver }}</td>
-          <td>{{ payment.amount }}</td>
+          <td>{{ payment.amount | currency:"NGN"}}</td>
 
           <td>{{ payment.transactionStatus }}</td>
           <td>{{ payment.transactionDate | date }}</td>

@@ -21,6 +21,10 @@
     padding: 10px;
     width: 100vw;
     height: 100vh;
+    input:focus(login-card) {
+      margin-top: 20px;
+      z-index: 2;
+    }
   }
 }
 

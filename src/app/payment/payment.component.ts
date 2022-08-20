@@ -1,5 +1,12 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { User } from '../models/user.model';
 
 @Component({
@@ -40,12 +47,23 @@ export class PaymentComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  ngOnChanges(changes: SimpleChanges): void {
+    const { recepient } = changes;
+    if (recepient.currentValue) {
+      const { bank, firstName, lastName } = recepient.currentValue;
+      this.paymentForm.patchValue({
+        receiverBank: bank,
+        receiver: firstName + ' ' + lastName,
+      });
+    } else {
+      this.paymentForm.patchValue({ receiverBank: '', receiver: '' });
+    }
+  }
+
   searchByAccNo() {
     let index = this.paymentForm.value.recieverAccNo;
     index = index ? index : '0';
-    if (index.length >= 10) {
-      this.receiveEvent.emit(this.paymentForm.value.recieverAccNo);
-    }
+    this.receiveEvent.emit(this.paymentForm.value.recieverAccNo);
   }
 
   payNow() {

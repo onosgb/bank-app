@@ -42,13 +42,9 @@ export class DashboardComponent implements OnInit {
 
   receiverPayment(accNo: any) {
     this.authService.getUsers().subscribe((users) => {
-      const user = users.find(
+      this.recepient = users.find(
         (user) => user.accNo === accNo && accNo !== this.userAccount.accNo
       );
-
-      if (user) {
-        this.recepient = user;
-      }
     });
   }
 
